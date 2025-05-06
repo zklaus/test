@@ -1,0 +1,29 @@
+name: test-upload
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read    
+    steps:
+    - uses: actions/checkout@v3
+        
+    - name: Create an artifact
+      run: echo "This is a test artifact" > test-artifact.txt
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 # v4.1.0
+      with:
+        role-to-assume: arn:aws:iam::027696454786:role/GithubActions
+        aws-region: eu-north-1
+      
+    - uses: zklaus/upload-artifact-s3@baba72d0712b404f646cebe0730933554ebce96a # v5.1.0
+      with:
+        region: eu-north-1
+        s3-bucket: myuniversaltestbucket
+        # s3-prefix: source_code/test
+        if-no-files-found: warn
+        path: test-artifact.txt
