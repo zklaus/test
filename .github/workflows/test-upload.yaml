@@ -20,7 +20,7 @@ jobs:
         role-to-assume: arn:aws:iam::027696454786:role/GithubActions
         aws-region: eu-north-1
       
-    - uses: seemethere/upload-artifact-s3@baba72d0712b404f646cebe0730933554ebce96a # v5.1.0
+    - uses: zklaus/upload-artifact-s3@baba72d0712b404f646cebe0730933554ebce96a # v5.1.0
       with:
         region: eu-north-1
         s3-bucket: myuniversaltestbucket
