@@ -24,6 +24,6 @@ jobs:
       with:
         region: eu-north-1
         s3-bucket: myuniversaltestbucket
-        # s3-prefix: source_code/test
+        s3-prefix: source_code/test
         if-no-files-found: warn
         path: test-artifact.txt
