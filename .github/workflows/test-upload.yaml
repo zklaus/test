@@ -25,6 +25,7 @@ jobs:
     - uses: zklaus/upload-artifact-s3@update-base
       with:
         region: eu-north-1
+        s3-acl: public-read
         s3-bucket: myuniversaltestbucket
         s3-prefix: source_code/test
         if-no-files-found: warn
