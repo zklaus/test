@@ -30,3 +30,4 @@ jobs:
         s3-prefix: source_code/test
         if-no-files-found: warn
         path: test-artifact.txt
+        overwrite: true
