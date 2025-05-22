@@ -23,6 +23,7 @@ jobs:
         aws-region: eu-north-1
       
     - uses: zklaus/upload-artifact-s3@update-base
+      id: upload
       with:
         region: eu-north-1
         s3-acl: public-read
@@ -31,3 +32,7 @@ jobs:
         if-no-files-found: warn
         path: test-artifact.txt
         overwrite: true
+
+    - name: Test output
+      run: |
+        echo "${{ steps.upload.outputs.artifact-id }}"
