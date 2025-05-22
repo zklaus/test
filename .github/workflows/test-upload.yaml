@@ -35,4 +35,4 @@ jobs:
 
     - name: Test output
       run: |
-        echo "${{ steps.upload.outputs.artifact-id }}"
+        echo "${{ steps.upload.outputs.uploaded-objects }}"
