@@ -22,7 +22,7 @@ jobs:
         role-to-assume: arn:aws:iam::027696454786:role/GithubActions
         aws-region: eu-north-1
       
-    - uses: zklaus/upload-artifact-s3@update-base
+    - uses: zklaus/test-infra/.github/actions/upload-artifact-s3@add-upload-s3
       id: upload
       with:
         region: eu-north-1
